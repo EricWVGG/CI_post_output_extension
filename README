@@ -1,0 +1,31 @@
+This is an extension to the Codeigniter core output class.
+
+It allows you to do time-intensive processing after output has been sent to a client browser. 
+I use it for image processing, thumbnail generation, CDN uploads and RSS feed analysis.
+
+In PHP this is usually accomplished with output buffering (or through inconvenient exec() calls to other scripts), 
+but Codeigniter's output class has its own output buffering which will interfere with what you're doing.
+
+requirements:
+Codeigniter 2+
+PHP 5.2.x+
+
+installation:
+Copy MY_output.php to your application/core folder.
+If you are using a custom subclass prefix (defined in application/config/config.php), rename the file with your prefix.
+
+usage:
+Write a closure that includes your post-processing code. (see http://php.net/manual/en/functions.anonymous.php if you're new to closures)
+Optionally make an array that includes any variables your enclosure might need. This can include Codeigniter via the get_instance() function.
+Register your code with the output class via:
+     $this->output->do_closure_after_output($closure, $parameters);
+
+You can register as many closures as you like.
+
+
+This is my first pieces of published code. If you find it useful, or have suggestions, I would love to hear from you.
+
+Eric Jacobsen
+code@whiskyvangoghgo.com
+http://whiskyvangoghgo.com
+August, 2011
