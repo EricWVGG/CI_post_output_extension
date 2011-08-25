@@ -19,7 +19,7 @@ class MY_Output extends CI_Output {
 		// halt codeigniter output buffering
 		ob_end_clean();
 		
-		// start our own output buffering, and close that connection
+		// start our own output buffering, and close the http connection to the client
 		ob_start();
 		parent::_display($output);
 		$size = ob_get_length();
