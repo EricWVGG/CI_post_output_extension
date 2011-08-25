@@ -8,7 +8,7 @@ but Codeigniter's output class has its own output buffering which will interfere
 
 requirements:
 Codeigniter 2+
-PHP 5.2.x+
+PHP 5.3.0
 
 installation:
 Copy MY_output.php to your application/core folder.
