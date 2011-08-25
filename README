@@ -12,10 +12,10 @@ PHP 5.3.0
 
 installation:
 Copy MY_output.php to your application/core folder.
-If you are using a custom subclass prefix (defined in application/config/config.php), rename the file with your prefix.
+If you are using a custom subclass prefix (defined in application/config/config.php), rename the file and class name with your prefix.
 
 usage:
-Write a closure that includes your post-processing code. (see http://php.net/manual/en/functions.anonymous.php if you're new to closures)
+Write a closure (a.k.a. anonymous function) that includes your post-processing code. (see http://php.net/manual/en/functions.anonymous.php if you're new to closures)
 Optionally make an array that includes any variables your enclosure might need. This can include Codeigniter via the get_instance() function.
 Register your code with the output class via:
      $this->output->do_closure_after_output($closure, $parameters);

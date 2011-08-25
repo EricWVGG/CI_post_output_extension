@@ -4,10 +4,6 @@ class MY_Output extends CI_Output {
 
 	private $closures = array();
 
-	public function __construct() {
-		parent::__construct();
-	}
-	
 	public function do_closure_after_output($closure, $parameters = array()) {
 		$this->closures[] = array('closure'=>$closure, 'parameters'=>$parameters);
 	}
